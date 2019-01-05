@@ -106,8 +106,6 @@ class Main extends Sprite
 		// ActuateSequence definition in Array
 		var aSequence = new Array<Dynamic>();
 		aSequence = [
-			//{ target:getAsset("titulo"), duration:0.5, from: { alpha:0.0, x:"-=50" }, to: { alpha:1.0, x:"original", delay:0.25 }  },
-			
 			{ target:sprite1, duration:0.5, from: { alpha:0.0, x:"-=50", delay:0.25 } },
 			{ target:sprite2, duration:0.5, from: { alpha:0.0, scaleX:2.0, scaleY:2.0 }, to: { alpha:1.0, scaleX:1.0, scaleY:1.0, delay: -0.25 } },
 			{ target:sprite3, duration:0.75, from: { y:"+=150", rotation:60, delay: -0.25, ease:Elastic.easeOut } },
