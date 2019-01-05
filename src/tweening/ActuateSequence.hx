@@ -261,9 +261,9 @@ class ActuateSequence extends EventDispatcher
 			
 		}
 		
-		// Stop all this sequence targets after timeline creation
+		// Pause all sequence targets after timeline creation
 		pauseSequenceTargets();
-		//Actuate.pauseAll();
+		
 		playing = false;
 		paused = false;
 	}
@@ -275,7 +275,8 @@ class ActuateSequence extends EventDispatcher
 	{
 		playing = false;
 		paused = false;
-		//Actuate.reset();
+		
+		stopSequenceTargets();
 		
 		var target:DisplayObject;
 		var originalTargetData:Dynamic;
@@ -283,9 +284,6 @@ class ActuateSequence extends EventDispatcher
 		
 		if (aSequence != null) 
 		{
-			//init();
-			
-			
 			
 			for ( target_name in aOriginalTargets.keys() ) 
 			{
@@ -430,7 +428,6 @@ class ActuateSequence extends EventDispatcher
 		playing = false;
 		paused = false;
 		
-		stopSequenceTargets();
 		reset();
 	}
 	
