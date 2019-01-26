@@ -1,4 +1,4 @@
-package tweening;
+package classes.tweening;
 
 import openfl.display.DisplayObject;
 import openfl.display.MovieClip;
@@ -374,6 +374,7 @@ class ActuateSequence extends EventDispatcher
 			target = originalTargetData.target;
 			Actuate.resume(target);
 		}
+		
 	}
 	
 	
@@ -383,6 +384,7 @@ class ActuateSequence extends EventDispatcher
 	public function start():Void
 	{
 		init();
+		//reset();
 		
 		playing = true;
 		paused = false;
@@ -398,6 +400,7 @@ class ActuateSequence extends EventDispatcher
 		if (!playing && !paused)
 		{
 			init();
+			//reset();
 		}
 		playing = true;
 		paused = false;
@@ -437,10 +440,10 @@ class ActuateSequence extends EventDispatcher
 	// ---------------------------------------------------------------------------------------------------------------------------
 	private function endSequence():Void
 	{
+		if (playing) dispatchEvent( new Event(ActuateSequence.ON_COMPLETE_SEQUENCE) );
+		
 		playing = false;
 		paused = false;
-		
-		dispatchEvent( new Event(ActuateSequence.ON_COMPLETE_SEQUENCE) );
 	}
 	
 	
