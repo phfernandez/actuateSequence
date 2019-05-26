@@ -1,4 +1,4 @@
-package classes.tweening;
+package tweening;
 
 import openfl.display.DisplayObject;
 import openfl.display.MovieClip;
